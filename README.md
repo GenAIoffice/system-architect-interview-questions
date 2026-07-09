@@ -38,6 +38,32 @@ customer's environment separate from ours, and make sure they stay matched over 
 - He carries passwords or keys between subscriptions.
 - No thought about keeping subscriptions separate, repeatable, or matched.
 
+## SOC 2 question — passing a security audit
+
+**Ask this question:**
+"Have you worked with SOC or SOC 2 before? Say our application needs to pass a SOC 2 audit. In
+simple terms, what would you make sure the application and the way it's deployed have in place,
+so it passes?"
+
+**Follow-up question:**
+"How would you prove to an auditor that only the right people can get in, that data is
+protected, and that you have a full record of what happened? What controls or tools would you
+set up to show that?"
+
+**The good answer you want to hear:**
+- He knows SOC 2 is about security controls — access control, encryption, audit logs, monitoring, and change management.
+- He builds in audit logging, so every action is recorded and can be reviewed later.
+- He controls access with roles and identities (only what each person needs), and uses a secrets vault — no shared passwords.
+- He encrypts data both when it's stored and when it's moving.
+- He has monitoring and alerts, and a clear change process (reviews and approvals) — nothing done quietly on the side.
+- He sets things up so evidence for the auditor is collected automatically, not scrambled together at the last minute.
+
+**The weak answer to watch out for:**
+- He's never heard of SOC 2, or can't explain what it's for.
+- He treats compliance as just paperwork, not something built into the app and the deployment.
+- No audit logs, weak access control, or shared passwords/keys.
+- He can't say how he'd actually prove the controls to an auditor.
+
 ## Question B — How he actually works with AI
 
 **Ask this question:**
