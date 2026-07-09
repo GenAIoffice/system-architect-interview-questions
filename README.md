@@ -85,52 +85,47 @@ stays matched over time, with nothing quietly drifting apart?"
 
 # Focus questions (A & B)
 
-The two questions below matter most for this role. Ask these even if you skip others.
+These two matter most for this role — deploying the same AI system into **different
+environments on a customer's own cloud subscription**, repeatably, using infrastructure-as-code.
+Ask these even if you skip others.
 
-## Question A — Deployment depth + doing it the same way every time
+## Question A — Deployment / operations depth + repeatability (directly tests the IaC / platform gap)
 
-- **What this checks (in plain words):** Can he take a messy, done-by-hand deployment and
-  turn it into something clean that runs the same way every time? This is the actual day job —
-  and it's the biggest gap in his resume, so dig in here.
-- **Competency (library):** *Delivery Excellence / Senior Consultant* — produces high-quality
-  work, spots and resolves risks, uses proper methods and tools.
+**Competency (library):** *Delivery Excellence / Senior Consultant* — "high quality work
+product... identifies and resolves risks... uses approved methodologies and tools."
 
-- **Say this:** "Tell me about a time you had a setup that was done by hand — slow, messy, one
-  step at a time — and you turned it into something clean that runs the same way every time.
-  What was it? What security rules did you have to follow? And how did you make it easy to
-  install, update, and keep track of?"
-- **Follow-up (important):** "Do you write your setup as code — with tools like Terraform,
-  Bicep, or Helm? How do you handle updates and keep an eye on things once it's live?"
+**Ask:** "Tell me about a manual or bespoke deployment you turned into a repeatable, defensible
+process. What was the environment, what constraints did the client/security team impose, and
+how did you make it install, configure, upgrade, observe, and audit reliably across
+environments — including standing the same system up inside a customer's own cloud subscription?"
 
-- **Strong answer — he:**
-  - names real tools (Terraform, Bicep, Helm, a CI/CD pipeline)
-  - thinks about updates, rollback, and audit trails
-  - does it the same way across many clients (repeatable, not one-off)
-- **Weak sign — he:**
-  - does deployments by hand
-  - has no setup-as-code
-  - can't explain how he watches it or undoes a bad change after go-live
+**Probe (crucial):** "How do you use infrastructure-as-code — Terraform, Bicep, Helm — to stand
+up the same system across different environments (dev / test / prod) and across different
+customer subscriptions? How do you keep those environments matched, handle upgrade paths, and
+cover observability and incident tooling?"
 
-## Question B — How he actually works with AI
+**Meets:** names concrete IaC / release / observability tooling; parameterizes per environment
+and per customer subscription; thinks about upgrades, rollback, audit trails, and
+*repeatability across environments and clients*.
 
-- **What this checks (in plain words):** Does he really *work with* AI tools like Claude in his
-  own day-to-day, or has he only *built products* that call an AI? And is he genuinely curious
-  about it?
-- **Competency (library):** *Knows the Business and the Industry / Consultant* — understands
-  trends and learns leading practices.
+**Does not meet:** deployments are ad-hoc/manual; no IaC; rebuilds per environment instead of
+parameterizing; can't describe observability, drift control, or upgrade strategy.
 
-- **Say this:** "Tell me about a recent time you used an AI assistant like Claude or Claude
-  Code as a real part of getting engineering work done — not building a product feature, but in
-  your own workflow. What were you trying to do, where did the tool break down or mislead you,
-  and how did you handle that?"
-- **Follow-up:** "Where do AI tools break, and how do you design around that?" / "What did you
-  teach yourself recently, and what did you do with it?"
+## Question B — AI fluency & how he actually works with AI tools
 
-- **Strong answer — he:**
-  - knows the difference between *building with* the AI and *working with* AI tools
-  - is honest about where AI breaks (makes things up, forgets context, limited)
-  - shows real, everyday curiosity about the field
-- **Weak sign — he:**
-  - only talks about AI as a product feature he built
-  - treats AI as magic
-  - can't name where it fails
+**Competency (library):** *Knows the Business and the Industry / Consultant* — "understand...
+interpret sector trends, and learn leading practices."
+
+**Ask:** "Tell me about a recent time you used an AI assistant like Claude or Claude Code as a
+real part of getting engineering work done — not building a product feature, but in your own
+workflow. Walk me through the situation, what you were trying to do, where the tool broke down
+or misled you, and how you handled that."
+
+**Probe:** "Where do LLMs break, and how do you design around that?" / "What did you teach
+yourself recently and what did you do with it?" (his application note)
+
+**Meets:** distinguishes building with the API from working with agentic tools; concrete
+workflow; honest about failure modes (hallucination, context limits); genuine curiosity.
+
+**Does not meet:** only talks about the API as a product ingredient; treats AI as magic; can't
+name where it fails.
