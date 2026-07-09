@@ -10,32 +10,33 @@ answer you want to hear, and the weak answer to watch out for.
 These two matter most: deploying the same AI system into **different environments on a
 customer's own cloud account**, repeatably, using setup-as-code (infrastructure-as-code).
 
-## Question A — Deployment and doing it the same way every time
+## Question A — Deploying our app into a different customer's subscription (does he use IaC?)
 
 **Ask this question:**
-"Tell me about a time you had a setup that was done by hand — slow and messy, one step at a
-time. And you turned it into something that runs the same way every time, on its own. What was
-it? What security rules did the client give you? And how did you set it up so it could be run
-again somewhere new without doing it all over by hand?"
+"Here's a real situation. We already have an application up and running in our own cloud
+subscription. Now we want to deploy that same application into a **different customer's
+subscription** — a separate cloud account that belongs to them. How would you do that? Would
+you set it up by hand each time, or is there a better way?"
 
 **Follow-up question:**
-"Do you write your setup as code — with tools like Terraform, Bicep, or Helm? If a customer
-wanted the same system inside their own cloud account, and in a few environments (like a test
-one and a live one), how would you build it once and reuse it? And how do you make sure those
-environments stay the same over time and don't drift apart?"
+"Do you use infrastructure-as-code — tools like Terraform or Bicep — where the whole setup is
+written as code? If yes, how would you take that same code and deploy it into a different
+subscription for each new customer, just by changing a few settings? And how do you keep each
+customer's environment separate from ours, and make sure they stay matched over time?"
 
 **The good answer you want to hear:**
-- He writes the setup as code, so it builds the same way every time.
-- He can reuse it for a new customer or a new environment by changing a few settings — not starting from scratch.
-- He uses managed identities and a secrets vault — not shared passwords or keys copied around.
-- He thinks about updates, undoing a change (rollback), and keeping a record (audit).
-- He has a way to catch it when environments drift apart.
+- He uses infrastructure-as-code (Terraform, Bicep) — the whole environment is written as code, not clicked by hand.
+- He deploys the same code into a new customer's subscription by changing a few settings (subscription, names, region) — not rebuilding it.
+- He keeps each customer's subscription fully separate — no shared data.
+- He uses managed identities and a secrets vault instead of copying passwords or keys between subscriptions.
+- He can repeat it quickly for the next customer, and has a way to keep environments matched (catch drift).
 
 **The weak answer to watch out for:**
-- He does deployments by hand.
-- He doesn't write the setup as code.
-- He would rebuild it from scratch for each customer or environment.
-- He can't say how he watches it after go-live, or how he undoes a bad change.
+- He would set it up by hand, or copy things over manually, for each customer.
+- He doesn't use infrastructure-as-code.
+- He hardcodes names and settings, so each new customer needs a rewrite.
+- He carries passwords or keys between subscriptions.
+- No thought about keeping subscriptions separate, repeatable, or matched.
 
 ## Question B — How he actually works with AI
 
