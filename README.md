@@ -1,131 +1,89 @@
 # System Architect — AI Engineering & Deployment: Interview Questions
 
-Plain-English questions to read aloud. Under each: what a strong answer sounds like, and
-weak signs to watch for.
+Simple questions to read aloud. For each one: the question to ask, a follow-up, the good
+answer you want to hear, and the weak answer to watch out for.
 
 ---
 
-## Q1 — How he works with AI (opener)
+# Focus questions (ask these first)
 
-**Say this:** "Tell me about something technical you taught yourself recently. What made you
-want to learn it, and what did you do with it? And do you use AI tools like Claude or Claude
-Code in your day-to-day work? Walk me through a time it helped — and a time it got something
-wrong and you had to catch it."
+These two matter most: deploying the same AI system into **different environments on a
+customer's own cloud account**, repeatably, using setup-as-code (infrastructure-as-code).
 
-- **Strong answer:** real curiosity; uses AI tools as part of how he works; honest about where they fail.
-- **Weak sign:** only talks about AI as a product feature he built; acts like it never gets things wrong.
+## Question A — Deployment and doing it the same way every time
+
+**Ask this question:**
+"Tell me about a time you had a setup that was done by hand — slow and messy, one step at a
+time. And you turned it into something that runs the same way every time, on its own. What was
+it? What security rules did the client give you? And how did you set it up so it could be run
+again somewhere new without doing it all over by hand?"
+
+**Follow-up question:**
+"Do you write your setup as code — with tools like Terraform, Bicep, or Helm? If a customer
+wanted the same system inside their own cloud account, and in a few environments (like a test
+one and a live one), how would you build it once and reuse it? And how do you make sure those
+environments stay the same over time and don't drift apart?"
+
+**The good answer you want to hear:**
+- He writes the setup as code, so it builds the same way every time.
+- He can reuse it for a new customer or a new environment by changing a few settings — not starting from scratch.
+- He uses managed identities and a secrets vault — not shared passwords or keys copied around.
+- He thinks about updates, undoing a change (rollback), and keeping a record (audit).
+- He has a way to catch it when environments drift apart.
+
+**The weak answer to watch out for:**
+- He does deployments by hand.
+- He doesn't write the setup as code.
+- He would rebuild it from scratch for each customer or environment.
+- He can't say how he watches it after go-live, or how he undoes a bad change.
+
+## Question B — How he actually works with AI
+
+**Ask this question:**
+"Tell me about a recent time you used an AI tool like Claude or Claude Code as part of your own
+work — not building an app feature, but to help you get engineering work done. What were you
+trying to do? Where did the tool get something wrong or mislead you, and what did you do about it?"
+
+**Follow-up question:**
+"Where do AI tools usually break or fall short, and how do you work around that? And what's
+something you taught yourself recently, and what did you do with it?"
+
+**The good answer you want to hear:**
+- He really uses AI tools in his day-to-day work, not as a gimmick.
+- He knows the difference between building an app that calls an AI and actually working with AI tools.
+- He's honest about where AI fails (makes things up, forgets context, has limits).
+- He's genuinely curious and keeps learning.
+
+**The weak answer to watch out for:**
+- He only talks about AI as a feature he built into a product.
+- He treats AI as magic that never gets things wrong.
+- He can't say where it fails.
 
 ---
 
-## Q2 — Solving problems with no map
+# Other questions (ask if there's time)
 
-**Say this:** "Tell me about a time you had to build or set something up where there was no
-guide, no example to copy, and no clear right answer. What was the hard part? How did you
-break it down, what did you try first, what went wrong, and how did you finally land on
-something that worked?"
+## Question C — Solving problems with no map
 
-- **Strong answer:** breaks a big unknown into pieces, tries a small version, learns from what breaks, converges on something solid.
-- **Weak sign:** only smooth stories; waited for someone else to tell him how.
+**Ask this question:**
+"Tell me about a time you had to build or set something up where there was no guide, no example
+to copy, and no clear right answer. What was the hard part? How did you break it down, what did
+you try first, what went wrong, and how did you finally land on something that worked?"
 
----
+- **Good answer:** breaks a big unknown into pieces, tries a small version, learns from what breaks, lands on something solid.
+- **Weak answer:** only smooth stories; waited for someone else to tell him how.
 
-## Q3 — Turning a messy deployment into a clean, repeatable one
+## Question D — Making his work usable by other people
 
-**Say this:** "Tell me about a time you had a setup that was done by hand — slow, messy, one
-step at a time — and you turned it into something clean that runs the same way every time.
-What was it? What security rules did you have to follow? And how did you make it easy to
-install, update, and keep track of?"
+**Ask this question:**
+"A lot of your work has been solo. Tell me about a time you wrote a guide, a runbook, or a
+handoff so other people could run something you built without you. How did you know it actually
+worked for them? And tell me about a time you pushed back on a design decision — even one of
+your own."
 
-**Follow-up:** "Do you write your setup as code — with tools like Terraform, Bicep, or Helm?
-Once it's live, how do you watch it, and how do you undo a change if something breaks?"
-
-- **Strong answer:** names real tools; thinks about updates, rollback, audit trails, doing it the same way across many clients.
-- **Weak sign (gap in his resume — listen closely):** deployments all manual; no setup-as-code; can't explain how he monitors after go-live.
-
----
-
-## Q4 — Making his work usable by other people
-
-**Say this:** "A lot of your work has been solo. Tell me about a time you wrote a guide, a
-runbook, or a handoff so that other people could run something you built without you. How did
-you know it actually worked for them? And tell me about a time you pushed back on a design
-decision — even one of your own."
-
-- **Strong answer:** other people really could run his work; documents on purpose; disagrees with good reasons and no ego.
-- **Weak sign:** "it's all in my head"; docs are an afterthought; gets defensive.
-
----
-
-## Q5 — The deployment scenario (real job, product never mentioned)
-
-**Say this:** "Here's a situation. You have an AI app that already works well in one cloud
-account. Now a client in a regulated industry — say a bank — wants the same app running inside
-their own private cloud account. Their rules: their own security, their own logins, no shared
-passwords or keys, and every action has to be recorded for audit. And you want to set it up so
-the **next** client after them is quick — not a fresh start each time. How would you do it?
-Where would you start, and what would you be most careful about?"
-
-**Follow-up:** "How would you make sure the new setup matches the first one exactly — and
-stays matched over time, with nothing quietly drifting apart?"
-
-- **Strong answer:** writes everything **as code** (built from a template, not by hand); uses
-  **managed identities + a secrets vault** instead of shared keys; keeps each client **fully
-  isolated**; turns on **audit logging** from day one; packages it so the next client is just
-  "run the template again" with a few settings changed; stops drift with **same code for every
-  environment + automated checks** that compare live setup to the code.
-- **Weak sign:** copies things over by hand; carries passwords/keys between environments;
-  treats each client as a one-off; no audit trail; no drift checking.
+- **Good answer:** other people really could run his work; he documents on purpose; he disagrees with good reasons and no ego.
+- **Weak answer:** "it's all in my head"; docs are an afterthought; he gets defensive.
 
 ---
 
 *SHARE format reminder — probe for: Situation, Hindrance, Action, Result, Evaluation.*
-
----
----
-
-# Focus questions (A & B)
-
-These two matter most for this role — deploying the same AI system into **different
-environments on a customer's own cloud subscription**, repeatably, using infrastructure-as-code.
-Ask these even if you skip others.
-
-## Question A — Deployment / operations depth + repeatability (directly tests the IaC / platform gap)
-
-**Competency (library):** *Delivery Excellence / Senior Consultant* — "high quality work
-product... identifies and resolves risks... uses approved methodologies and tools."
-
-**Ask:** "Tell me about a manual or bespoke deployment you turned into a repeatable, defensible
-process. What was the environment, what constraints did the client/security team impose, and
-how did you make it install, configure, upgrade, observe, and audit reliably across
-environments — including standing the same system up inside a customer's own cloud subscription?"
-
-**Probe (crucial):** "How do you use infrastructure-as-code — Terraform, Bicep, Helm — to stand
-up the same system across different environments (dev / test / prod) and across different
-customer subscriptions? How do you keep those environments matched, handle upgrade paths, and
-cover observability and incident tooling?"
-
-**Meets:** names concrete IaC / release / observability tooling; parameterizes per environment
-and per customer subscription; thinks about upgrades, rollback, audit trails, and
-*repeatability across environments and clients*.
-
-**Does not meet:** deployments are ad-hoc/manual; no IaC; rebuilds per environment instead of
-parameterizing; can't describe observability, drift control, or upgrade strategy.
-
-## Question B — AI fluency & how he actually works with AI tools
-
-**Competency (library):** *Knows the Business and the Industry / Consultant* — "understand...
-interpret sector trends, and learn leading practices."
-
-**Ask:** "Tell me about a recent time you used an AI assistant like Claude or Claude Code as a
-real part of getting engineering work done — not building a product feature, but in your own
-workflow. Walk me through the situation, what you were trying to do, where the tool broke down
-or misled you, and how you handled that."
-
-**Probe:** "Where do LLMs break, and how do you design around that?" / "What did you teach
-yourself recently and what did you do with it?" (his application note)
-
-**Meets:** distinguishes building with the API from working with agentic tools; concrete
-workflow; honest about failure modes (hallucination, context limits); genuine curiosity.
-
-**Does not meet:** only talks about the API as a product ingredient; treats AI as magic; can't
-name where it fails.
