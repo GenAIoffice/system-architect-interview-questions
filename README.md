@@ -79,3 +79,58 @@ stays matched over time, with nothing quietly drifting apart?"
 ---
 
 *SHARE format reminder — probe for: Situation, Hindrance, Action, Result, Evaluation.*
+
+---
+---
+
+# Focus questions (A & B)
+
+The two questions below matter most for this role. Ask these even if you skip others.
+
+## Question A — Deployment depth + doing it the same way every time
+
+- **What this checks (in plain words):** Can he take a messy, done-by-hand deployment and
+  turn it into something clean that runs the same way every time? This is the actual day job —
+  and it's the biggest gap in his resume, so dig in here.
+- **Competency (library):** *Delivery Excellence / Senior Consultant* — produces high-quality
+  work, spots and resolves risks, uses proper methods and tools.
+
+- **Say this:** "Tell me about a time you had a setup that was done by hand — slow, messy, one
+  step at a time — and you turned it into something clean that runs the same way every time.
+  What was it? What security rules did you have to follow? And how did you make it easy to
+  install, update, and keep track of?"
+- **Follow-up (important):** "Do you write your setup as code — with tools like Terraform,
+  Bicep, or Helm? How do you handle updates and keep an eye on things once it's live?"
+
+- **Strong answer — he:**
+  - names real tools (Terraform, Bicep, Helm, a CI/CD pipeline)
+  - thinks about updates, rollback, and audit trails
+  - does it the same way across many clients (repeatable, not one-off)
+- **Weak sign — he:**
+  - does deployments by hand
+  - has no setup-as-code
+  - can't explain how he watches it or undoes a bad change after go-live
+
+## Question B — How he actually works with AI
+
+- **What this checks (in plain words):** Does he really *work with* AI tools like Claude in his
+  own day-to-day, or has he only *built products* that call an AI? And is he genuinely curious
+  about it?
+- **Competency (library):** *Knows the Business and the Industry / Consultant* — understands
+  trends and learns leading practices.
+
+- **Say this:** "Tell me about a recent time you used an AI assistant like Claude or Claude
+  Code as a real part of getting engineering work done — not building a product feature, but in
+  your own workflow. What were you trying to do, where did the tool break down or mislead you,
+  and how did you handle that?"
+- **Follow-up:** "Where do AI tools break, and how do you design around that?" / "What did you
+  teach yourself recently, and what did you do with it?"
+
+- **Strong answer — he:**
+  - knows the difference between *building with* the AI and *working with* AI tools
+  - is honest about where AI breaks (makes things up, forgets context, limited)
+  - shows real, everyday curiosity about the field
+- **Weak sign — he:**
+  - only talks about AI as a product feature he built
+  - treats AI as magic
+  - can't name where it fails
